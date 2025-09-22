@@ -382,10 +382,28 @@ html {
     box-shadow: var(--shadow-sphere-glow);
   }
 
-  /* Hide scrollbar */
+  /* Scrollbar Styling */
   ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+    width: 10px; /* Width of vertical scrollbar */
+    height: 10px; /* Height of horizontal scrollbar */
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a; /* Dark background */
+    border-radius: 10px;
+  }
+
+  /* Thumb */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff007f, #6a0dad, #00008b);
+    border-radius: 10px;
+    border: 2px solid #0a0a0a; /* Adds space around thumb */
+  }
+
+  /* Thumb Hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ff4fa0, #8a2be2, #1e3a8a);
   }
 
   html {

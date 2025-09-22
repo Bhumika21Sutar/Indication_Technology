@@ -177,8 +177,8 @@
 
 .hero-button:hover {
   opacity: 0.9;
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 56, 155, 0.6);
 }
 
 /* Animations */

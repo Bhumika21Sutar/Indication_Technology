@@ -1,82 +1,3 @@
-// import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
-// import Logo from "../assets/Logo1.png";
-// import { Link } from "react-router-dom";
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-black text-white py-12">
-//       <div className="w-full mx-auto px-6">
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-//           {/* Logo Section */}
-//           <div className="flex flex-col items-center sm:items-start">
-//             <img
-//               src={Logo}
-//               alt="Indication Technology Logo"
-//               className="h-12 w-auto object-contain"
-//             />
-//             {/* <p className="text-gray-400 text-sm text-center sm:text-left">
-//               Building innovative solutions with cutting-edge technology.
-//             </p> */}
-//           </div>
-
-//           {/* Call Our Office */}
-//           <div className="text-center sm:text-left">
-//             <h4 className="font-poppins font-semibold text-lg mb-3">
-//               Call our office
-//             </h4>
-//             <p className="text-gray-300 text-lg">+91 70301 94516</p>
-//           </div>
-
-//           {/* Services */}
-//           <div className="text-center sm:text-left">
-//             <h4 className="font-poppins font-semibold text-lg mb-3">
-//               Services
-//             </h4>
-//             <ul className="space-y-2 text-gray-300">
-//               <li>
-//                 <Link
-//                   to="/web-development"
-//                   className="hover:text-brand-purple transition-colors duration-300"
-//                 >
-//                   Web Development
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link
-//                   to="/app-development"
-//                   className="hover:text-brand-purple transition-colors duration-300"
-//                 >
-//                   Mobile App Development
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link
-//                   to="/ai-services"
-//                   className="hover:text-brand-purple transition-colors duration-300"
-//                 >
-//                   AI Services
-//                 </Link>
-//               </li>
-//             </ul>
-//           </div>
-
-//           {/* Send a Message */}
-//           <div className="text-center sm:text-left">
-//             <h4 className="font-poppins font-semibold text-lg mb-3">
-//               Send a message
-//             </h4>
-//             <p className="text-gray-300 break-words">
-//               indicationtechnology@gmail.com
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
 import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 import Logo from "../assets/Logo1.png";
 import { Link } from "react-router-dom";
@@ -94,17 +15,28 @@ const Footer = () => {
               alt="Indication Technology Logo"
               className="h-12 w-auto object-contain"
             />
-            <p className="text-gray-400 text-sm text-center sm:text-left mt-2">
-              Building innovative solutions with cutting-edge technology.
-            </p>
+            <p className="text-gray-400 text-sm text-center sm:text-left mt-2"></p>
           </div>
 
           {/* Call Our Office */}
-          <div className="text-center sm:text-left">
+          {/* <div className="text-center sm:text-left">
             <h4 className="font-poppins font-semibold text-lg mb-3">
               Call our office
             </h4>
             <p className="text-gray-300 text-lg">+91 70301 94516</p>
+          </div> */}
+          <div className="text-center sm:text-left">
+            <h4 className="font-poppins font-semibold text-lg mb-3">
+              Call our office
+            </h4>
+            <p className="text-gray-300 text-lg">
+              <a
+                href="tel:+917030194516"
+                className="hover:text-brand-purple transition-colors duration-300"
+              >
+                +91 70301 94516
+              </a>
+            </p>
           </div>
 
           {/* Services */}
@@ -141,12 +73,29 @@ const Footer = () => {
           </div>
 
           {/* Send a Message */}
-          <div className="text-center sm:text-left">
+          {/* <div className="text-center sm:text-left">
             <h4 className="font-poppins font-semibold text-lg mb-3">
               Send a message
             </h4>
             <p className="text-gray-300 break-words">
               indicationtechnology@gmail.com
+            </p>
+          </div> */}
+
+          {/* Send a Message */}
+          <div className="text-center sm:text-left">
+            <h4 className="font-poppins font-semibold text-lg mb-3">
+              Send a message
+            </h4>
+            <p className="text-gray-300 break-words">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=indicationtechnology@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-purple transition-colors duration-300"
+              >
+                indicationtechnology@gmail.com
+              </a>
             </p>
           </div>
         </div>

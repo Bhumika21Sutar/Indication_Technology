@@ -9,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import FooterFix from "@/components/FooterFix";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const Index = () => {
   useEffect(() => {

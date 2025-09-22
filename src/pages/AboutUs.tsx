@@ -8,6 +8,9 @@ import FooterFix from "@/components/FooterFix";
 import ContactModal from "../pages/ContactModal";
 import { useState, useEffect } from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const AboutUs = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -64,10 +67,16 @@ const AboutUs = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <img
+            {/* <img
               src={About}
               alt="Team working"
               loading="lazy"
+              className="rounded-1xl shadow-lg object-cover clip-slant"
+            /> */}
+            <LazyLoadImage
+              alt="Team working"
+              effect="blur"
+              src={About}
               className="rounded-1xl shadow-lg object-cover clip-slant"
             />
           </motion.div>

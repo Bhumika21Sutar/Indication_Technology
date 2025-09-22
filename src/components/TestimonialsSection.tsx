@@ -343,11 +343,61 @@ const TestimonialsSection = () => {
         </div>
 
         {/* ✅ Responsive Grid (tablets & up) */}
-        <div
+        {/* <div
           className="hidden sm:grid gap-6 mt-12"
           style={{
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-card rounded-2xl p-6 shadow-elegant border border-border/50 hover-lift flex flex-col items-center text-center"
+            >
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                loading="lazy"
+                className="w-16 h-16 rounded-full object-cover border-2 border-gray-300 mb-4"
+              />
+
+              {renderStars(testimonial.rating)}
+
+              <p className="text-muted-foreground text-sm mb-3">
+                "{testimonial.text}"
+              </p>
+
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                alt="Google"
+                loading="lazy"
+                className="h-6 mb-3"
+              />
+
+              <div className="flex items-center justify-center space-x-1">
+                <h3 className="text-lg font-semibold text-foreground">
+                  {testimonial.name}
+                </h3>
+                <CheckCircle className="w-5 h-5 text-blue-500" />
+              </div>
+
+              <p className="text-xs text-gray-400">{testimonial.timeAgo}</p>
+            </div>
+          ))}
+        </div> */}
+
+        {/* ✅ Responsive Grid (tablets & up) */}
+        <div
+          className="
+    hidden 
+    sm:grid 
+    gap-6 mt-12 
+    grid-cols-1
+    md:grid-cols-2
+    lg:grid-cols-3
+    xl:grid-cols-4
+    2xl:grid-cols-5
+  "
         >
           {testimonials.map((testimonial, index) => (
             <div

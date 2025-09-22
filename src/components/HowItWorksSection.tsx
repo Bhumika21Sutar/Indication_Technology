@@ -8,7 +8,7 @@ const HowItWorksSection = () => {
       icon: <Briefcase className="w-8 h-8 text-white" />,
       title: "Discovery & Planning",
       description:
-        "Our process starts with a thorough understanding of your business objectives, target audience, and project needs.",
+        "Our process starts with a through understanding of your business objectives, target audience, and project needs.",
       color: "bg-brand-blue",
     },
     {

@@ -1,370 +1,3 @@
-// import React from "react";
-
-// function ContactSection() {
-//   const onSubmit = async (event) => {
-//     event.preventDefault();
-//     const formData = new FormData(event.target);
-
-//     formData.append("access_key", "f3ff2336-edec-4fe6-b0b2-e911f4dc4ffe");
-
-//     const object = Object.fromEntries(formData);
-//     const json = JSON.stringify(object);
-
-//     const res = await fetch("https://api.web3forms.com/submit", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json",
-//       },
-//       body: json,
-//     }).then((res) => res.json());
-
-//     if (res.success) {
-//       console.log("Success", res);
-//     }
-//   };
-//   return (
-//     <div
-//       id="contact"
-//       className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-100 to-purple-100 px-6 py-12"
-//     >
-//       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
-//         {/* Left Content */}
-//         <div>
-//           <h2 className="text-4xl font-extrabold text-gray-900 leading-snug">
-//             Schedule Your{" "}
-//             <span className="bg-gradient-to-r from-pink-500 to-blue-600 bg-clip-text text-transparent">
-//               Appointment
-//             </span>
-//           </h2>
-//           <p className="mt-4 text-gray-600">
-//             From first hello to final handshake, we're here to assist you every
-//             step of the way, whether you have questions, feedback, or interested
-//             in collaborating. Reach out—your next big move starts here.
-//           </p>
-
-//           <ul className="mt-6 space-y-3 text-gray-700">
-//             <li>⚡ Connect all your tools in one place.</li>
-//             <li>🚀 Stay ahead with cutting-edge features.</li>
-//             <li>🧩 Tailor our platform to your needs.</li>
-//             <li>💬 24/7 Support: Always here to help.</li>
-//             <li>✨ ...And more</li>
-//           </ul>
-
-//           <div className="flex items-center mt-6 space-x-2">
-//             <img
-//               src="https://randomuser.me/api/portraits/men/32.jpg"
-//               alt="client1"
-//               className="w-10 h-10 rounded-full border-2 border-white shadow"
-//             />
-//             <img
-//               src="https://randomuser.me/api/portraits/women/44.jpg"
-//               alt="client2"
-//               className="w-10 h-10 rounded-full border-2 border-white shadow -ml-3"
-//             />
-//             <img
-//               src="https://randomuser.me/api/portraits/men/67.jpg"
-//               alt="client3"
-//               className="w-10 h-10 rounded-full border-2 border-white shadow -ml-3"
-//             />
-//             <p className="text-sm font-medium text-gray-600">
-//               More than 54+ satisfied clients
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Right Form */}
-//         <form
-//           onSubmit={onSubmit}
-//           className="bg-white shadow-lg rounded-2xl p-8 space-y-5"
-//         >
-//           <input
-//             type="email"
-//             name="email"
-//             placeholder="Enter your email"
-//             required
-//             className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//           />
-
-//           <input
-//             type="text"
-//             name="name"
-//             placeholder="Enter your name"
-//             required
-//             className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//           />
-
-//           <input
-//             type="text"
-//             name="subject"
-//             placeholder="How can we help you?"
-//             required
-//             className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//           />
-
-//           <input
-//             type="text"
-//             name="phone"
-//             placeholder="Enter your phone number"
-//             required
-//             className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//           />
-
-//           <textarea
-//             name="message"
-//             placeholder="Enter your message"
-//             rows="4"
-//             required
-//             className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//           ></textarea>
-
-//           <button
-//             type="submit"
-//             className="w-full py-3 rounded-full text-white font-semibold bg-gradient-to-r from-pink-500 to-blue-600 hover:opacity-90 transition"
-//           >
-//             Send
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default ContactSection;
-
-// import React, { useState } from "react";
-
-// type PopupState = {
-//   type: "success" | "error";
-//   message: string;
-// } | null;
-
-// function ContactSection() {
-//   const [popup, setPopup] = useState<PopupState>(null); // for success/error popup
-
-//   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-//     event.preventDefault();
-//     const formData = new FormData(event.currentTarget);
-
-//     formData.append("access_key", "f3ff2336-edec-4fe6-b0b2-e911f4dc4ffe");
-
-//     const object = Object.fromEntries(formData);
-//     const json = JSON.stringify(object);
-
-//     try {
-//       const res = await fetch("https://api.web3forms.com/submit", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Accept: "application/json",
-//         },
-//         body: json,
-//       }).then((res) => res.json());
-
-//       if (res.success) {
-//         setPopup({ type: "success", message: "✅ Message sent successfully!" });
-//         event.currentTarget.reset();
-//       } else {
-//         setPopup({ type: "error", message: "❌ Failed to send message!" });
-//       }
-//     } catch (error) {
-//       setPopup({
-//         type: "error",
-//         message: "⚠️ Something went wrong. Try again!",
-//       });
-//     }
-
-//     // hide popup after 3s
-//     setTimeout(() => setPopup(null), 3000);
-//   };
-
-//   return (
-//     // <div
-//     //   id="contact"
-//     //   className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-100 to-purple-100 px-6 py-12"
-//     // >
-//     //   <div className=" w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-//     //     {/* Left Content */}
-//     //     <div>
-//     //       <h2 className="text-4xl font-extrabold text-gray-900 leading-snug">
-//     //         Schedule Your{" "}
-//     //         <span className="bg-gradient-to-r from-pink-500 to-blue-600 bg-clip-text text-transparent">
-//     //           Appointment
-//     //         </span>
-//     //       </h2>
-//     //       <p className="mt-4 text-gray-600">
-//     //         From first hello to final handshake, we're here to assist you every
-//     //         step of the way. Reach out—your next big move starts here.
-//     //       </p>
-
-//     //       <ul className="mt-6 space-y-3 text-gray-700">
-//     //         <li>⚡ Connect all your tools in one place.</li>
-//     //         <li>🚀 Stay ahead with cutting-edge features.</li>
-//     //         <li>🧩 Tailor our platform to your needs.</li>
-//     //         <li>💬 24/7 Support: Always here to help.</li>
-//     //         <li>✨ ...And more</li>
-//     //       </ul>
-//     //     </div>
-
-//     //     {/* Right Form */}
-//     //     <form
-//     //       onSubmit={onSubmit}
-//     //       className="bg-white shadow-lg rounded-2xl p-8 space-y-5 relative"
-//     //     >
-//     //       {/* Popup Message */}
-//     //       {popup && (
-//     //         <div
-//     //           className={`absolute top-[-50px] left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-md text-white ${
-//     //             popup.type === "success" ? "bg-green-500" : "bg-red-500"
-//     //           }`}
-//     //         >
-//     //           {popup.message}
-//     //         </div>
-//     //       )}
-
-//     //       <input
-//     //         type="email"
-//     //         name="email"
-//     //         placeholder="Enter your email"
-//     //         required
-//     //         className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//     //       />
-
-//     //       <input
-//     //         type="text"
-//     //         name="name"
-//     //         placeholder="Enter your name"
-//     //         required
-//     //         className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//     //       />
-
-//     //       <input
-//     //         type="text"
-//     //         name="subject"
-//     //         placeholder="How can we help you?"
-//     //         required
-//     //         className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//     //       />
-
-//     //       <input
-//     //         type="text"
-//     //         name="phone"
-//     //         placeholder="Enter your phone number"
-//     //         required
-//     //         className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//     //       />
-
-//     //       <textarea
-//     //         name="message"
-//     //         placeholder="Enter your message"
-//     //         rows={4}
-//     //         required
-//     //         className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none"
-//     //       ></textarea>
-
-//     //       <button
-//     //         type="submit"
-//     //         className="w-full py-3 rounded-full text-white font-semibold bg-gradient-to-r from-pink-500 to-blue-600 hover:opacity-90 transition"
-//     //       >
-//     //         Send
-//     //       </button>
-//     //     </form>
-//     //   </div>
-//     // </div>
-
-//     <section
-//       id="contact"
-//       className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-100 to-purple-100 px-4 sm:px-6 lg:px-12 py-10"
-//     >
-//       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
-//         {/* Left Content */}
-//         <div className="text-center md:text-left">
-//           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-snug">
-//             Schedule Your{" "}
-//             <span className="bg-gradient-to-r from-pink-500 to-blue-600 bg-clip-text text-transparent">
-//               Appointment
-//             </span>
-//           </h2>
-//           <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
-//             From first hello to final handshake, we're here to assist you every
-//             step of the way. Reach out—your next big move starts here.
-//           </p>
-
-//           <ul className="mt-6 space-y-2 text-gray-700 text-sm sm:text-base">
-//             <li>⚡ Connect all your tools in one place.</li>
-//             <li>🚀 Stay ahead with cutting-edge features.</li>
-//             <li>🧩 Tailor our platform to your needs.</li>
-//             <li>💬 24/7 Support: Always here to help.</li>
-//             <li>✨ ...And more</li>
-//           </ul>
-//         </div>
-
-//         {/* Right Form */}
-//         <form
-//           onSubmit={onSubmit}
-//           className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 space-y-4 sm:space-y-5 relative"
-//         >
-//           {/* Popup Message */}
-//           {popup && (
-//             <div
-//               className={`absolute -top-12 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-md text-white text-sm sm:text-base ${
-//                 popup.type === "success" ? "bg-green-500" : "bg-red-500"
-//               }`}
-//             >
-//               {popup.message}
-//             </div>
-//           )}
-
-//           <input
-//             type="email"
-//             name="email"
-//             placeholder="Enter your email"
-//             required
-//             className="w-full px-4 py-3 sm:py-4 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
-//           />
-//           <input
-//             type="text"
-//             name="name"
-//             placeholder="Enter your name"
-//             required
-//             className="w-full px-4 py-3 sm:py-4 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
-//           />
-//           <input
-//             type="text"
-//             name="subject"
-//             placeholder="How can we help you?"
-//             required
-//             className="w-full px-4 py-3 sm:py-4 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
-//           />
-//           <input
-//             type="text"
-//             name="phone"
-//             placeholder="Enter your phone number"
-//             required
-//             className="w-full px-4 py-3 sm:py-4 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
-//           />
-//           <textarea
-//             name="message"
-//             placeholder="Enter your message"
-//             rows={4}
-//             required
-//             className="w-full px-4 py-3 sm:py-4 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
-//           ></textarea>
-
-//           <button
-//             type="submit"
-//             className="w-full py-3 sm:py-4 rounded-full text-white font-semibold bg-gradient-to-r from-pink-500 to-blue-600 hover:opacity-90 transition text-sm sm:text-base"
-//           >
-//             Send
-//           </button>
-//         </form>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default ContactSection;
-
 import React, { useState } from "react";
 
 type PopupState = {
@@ -413,13 +46,20 @@ function ContactSection() {
   return (
     <section
       id="contact"
+      // className="
+      //   min-h-screen
+      //   flex items-center justify-center
+      //   bg-gradient-to-r from-pink-100 to-purple-100
+      //   px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32
+      //   py-10 sm:py-12 md:py-16 lg:py-20
+      // "
       className="
-        min-h-screen 
-        flex items-center justify-center 
-        bg-gradient-to-r from-pink-100 to-purple-100 
-        px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 
-        py-10 sm:py-12 md:py-16 lg:py-20
-      "
+  min-h-screen 
+  flex items-center justify-center 
+  bg-gradient-to-r from-pink-100 to-purple-100 
+  px-4 sm:px-6 md:px-8 lg:px-12 
+  py-8 sm:py-10 md:py-12
+"
     >
       <div
         className="
@@ -433,7 +73,7 @@ function ContactSection() {
         <div className="text-center md:text-left">
           <h2
             className="
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
+              text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl 
               font-extrabold text-gray-900 leading-snug
             "
           >
@@ -446,7 +86,7 @@ function ContactSection() {
             className="
               mt-4 
               text-gray-600 
-              text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl
+              text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl
               max-w-xl
             "
           >
@@ -471,7 +111,7 @@ function ContactSection() {
         </div>
 
         {/* Right Form */}
-        <form
+        {/* <form
           onSubmit={onSubmit}
           className="
             bg-white shadow-lg rounded-2xl 
@@ -480,7 +120,7 @@ function ContactSection() {
             relative
           "
         >
-          {/* Popup */}
+        
           {popup && (
             <div
               className={`
@@ -543,6 +183,83 @@ function ContactSection() {
               hover:opacity-90 transition 
               text-sm sm:text-base md:text-lg
             "
+          >
+            Send
+          </button>
+        </form> */}
+        <form
+          onSubmit={onSubmit}
+          className="
+    bg-white shadow-lg rounded-xl   /* ✅ smaller radius for clean look */
+    p-6 sm:p-8 md:p-8 lg:p-10       /* ✅ reduced padding */
+    space-y-4                       /* ✅ compact spacing */
+    relative
+    w-full max-w-md mx-auto         /* ✅ form width fixed */
+  "
+        >
+          {/* Popup */}
+          {popup && (
+            <div
+              className={`
+        absolute -top-12 left-1/2 transform -translate-x-1/2 
+        px-4 py-2 
+        rounded-md shadow-md 
+        text-white 
+        text-sm sm:text-base
+        ${popup.type === "success" ? "bg-green-500" : "bg-red-500"}
+      `}
+            >
+              {popup.message}
+            </div>
+          )}
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="How can we help you?"
+            required
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
+          />
+          <textarea
+            name="message"
+            placeholder="Enter your message"
+            rows={4}
+            required
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="
+      w-full 
+      py-2.5 sm:py-3 
+      rounded-full 
+      text-white font-medium 
+      bg-gradient-to-r from-pink-500 to-blue-600 
+      hover:opacity-90 transition 
+      text-sm sm:text-base
+    "
           >
             Send
           </button>

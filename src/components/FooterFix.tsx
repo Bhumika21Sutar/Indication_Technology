@@ -212,7 +212,11 @@ const FooterFix = () => {
         {/* Social Media Icons (top on mobile, right on desktop) */}
         <div className="flex space-x-4 mb-2 mt-2 md:mb-0">
           {[
-            { Icon: Linkedin, bg: "bg-blue-600", link: "#" },
+            {
+              Icon: Linkedin,
+              bg: "bg-blue-600",
+              link: "https://www.linkedin.com/company/indication-technology-pvt-ltd/",
+            },
             { Icon: Twitter, bg: "bg-blue-400", link: "#" },
             {
               Icon: Instagram,
