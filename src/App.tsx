@@ -10,6 +10,7 @@ import WebDevelopment from "./pages/WebDevelopment";
 import AIServices from "./pages/AIServices";
 import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
+import ScrollSync from "./components/ScrollSync";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ScrollSync />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

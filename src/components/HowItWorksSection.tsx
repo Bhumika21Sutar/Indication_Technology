@@ -47,7 +47,7 @@ const HowItWorksSection = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section id="how-it-works" className="py-20 bg-background">
       <div className="w-full mx-auto px-6">
         {/* Header */}
         <motion.div

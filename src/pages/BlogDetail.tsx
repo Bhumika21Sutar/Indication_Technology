@@ -53,6 +53,19 @@ const ShareButton = ({ url, title }: ShareButtonProps) => {
   );
 };
 
+const getDaysAgo = (dateStr: string) => {
+  const postDate = new Date(dateStr);
+  const today = new Date();
+
+  const diffTime = today.getTime() - postDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 0) return "Today";
+  if (diffDays === 1) return "1 day ago";
+
+  return `${diffDays} days ago`;
+};
+
 const BlogDetail = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -65,178 +78,282 @@ const BlogDetail = () => {
   const blogPosts: Record<string, BlogPost> = {
     "ai-agents-future": {
       id: "ai-agents-future",
-      title: "AI Agents: The Future of Intelligent Automation",
+      title: "The Future of Business Automation in 2025",
       excerpt:
-        "The world of artificial intelligence is evolving fast — and leading the charge are AI agents, intelligent systems capable of making decisions, taking action, and learning from their environment.",
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-      date: "Aug 25, 2025",
-      author: "AI Team",
+        "The year 2025 marks a new era for business. Not one where people are replaced by machines — but one where people are empowered by intelligence. Businesses that integrate Artificial Intelligence (AI) and automation the right way will work smarter, make faster decisions, and grow exponentially.",
+      image: "/src/assets/Blog1.jpg",
+      date: "Oct 29, 2025",
+      author: "Indication Technology Pvt Ltd",
       readTime: "8 min read",
-      tags: ["AI", "Automation", "Technology", "Future"],
+      tags: [
+        "#AIAutomation",
+        "#BusinessGrowth",
+        "#FutureOfWork",
+        "#ArtificialIntelligence",
+        "#AIAgents",
+        "#Automation",
+        "#DigitalTransformation",
+        "#TechForGrowth",
+      ],
       content: `
-        <div class="prose prose-lg max-w-none">
-          <p class="text-xl text-muted-foreground mb-8">The world of artificial intelligence is evolving fast — and leading the charge are AI agents, intelligent systems capable of making decisions, taking action, and learning from their environment. These agents aren't just theoretical concepts; they're already reshaping industries, improving efficiency, and unlocking new possibilities.</p>
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-muted-foreground mb-8">
+          The year 2025 marks a new era for business. Not one where people are replaced by machines — but one where people are empowered by intelligence. The future of work isn’t about removing the human element; it’s about amplifying it. Businesses that integrate Artificial Intelligence (AI) and automation the right way will work smarter, make faster decisions, and grow exponentially.
+        </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">What Are AI Agents?</h2>
-          <p class="text-lg text-muted-foreground mb-6">AI agents are smart, autonomous software programs designed to perform tasks, make decisions, and adapt without constant human input. Unlike basic chatbots or traditional apps that follow fixed instructions, AI agents can perceive, reason, and act in realtime — all while learning and improving.</p>
-          <p class="text-lg text-muted-foreground mb-6">Think of an AI agent as an advanced digital assistant. It doesn't just follow scripts — it analyzes situations, plans solutions, and acts across platforms to get the job done.</p>
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">1️⃣ AI Agents Are Becoming Part of the Team</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          Imagine a team member who never sleeps, never forgets a task, and continuously learns to get better. That’s the power of AI agents.
+          These intelligent systems can send personalized emails, find leads, schedule meetings, and automate workflows — freeing humans to focus on creativity and relationships.
+        </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Key Features of AI Agents</h2>
-          <ul class="list-disc pl-6 space-y-3 text-lg text-muted-foreground mb-8">
-            <li><strong class="text-foreground">Autonomy:</strong> They work independently after receiving objectives, reducing manual oversight.</li>
-            <li><strong class="text-foreground">Goal-Oriented:</strong> Whether optimizing logistics or improving customer service, AI agents focus on specific outcomes.</li>
-            <li><strong class="text-foreground">Environmental Awareness:</strong> They interpret data, sensor inputs, or user behavior to make informed decisions.</li>
-            <li><strong class="text-foreground">Learning & Adaptation:</strong> AI agents evolve over time, refining their performance through experience.</li>
-            <li><strong class="text-foreground">Multi-Modal Interaction:</strong> Text, voice, images, or direct actions — AI agents engage across channels.</li>
-          </ul>
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">2️⃣ Automation Is the New Business Standard</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          Just like every company needed a website 20 years ago, every business now needs automation. The question is no longer “Who will do this task?” but “How can we automate this?”
+          Automation drives speed, scalability, and precision — and in 2025, it’s no longer optional.
+        </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Types of AI Agents</h2>
-          <div class="grid md:grid-cols-2 gap-6 mb-8">
-            <div class="bg-card p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-3">Reactive Agents</h3>
-              <p class="text-muted-foreground">Respond to immediate stimuli (e.g., real-time trading systems).</p>
-            </div>
-            <div class="bg-card p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-3">Deliberative Agents</h3>
-              <p class="text-muted-foreground">Use reasoning and planning for complex tasks (e.g., strategic decision-making).</p>
-            </div>
-            <div class="bg-card p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-3">Hybrid Agents</h3>
-              <p class="text-muted-foreground">Combine quick reactions with long-term planning — the most common type today.</p>
-            </div>
-            <div class="bg-card p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-3">Multi-Agent Systems</h3>
-              <p class="text-muted-foreground">Teams of agents collaborate (or compete) to solve complex challenges, like swarm robotics or distributed AI networks.</p>
-            </div>
-          </div>
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">3️⃣ People + AI = Growth</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          The most successful businesses blend human creativity with AI’s speed and accuracy. AI handles repetitive tasks while people focus on strategy, relationships, and innovation — creating a powerful synergy that accelerates growth.
+        </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Where AI Agents Are Making an Impact</h2>
-          <div class="space-y-4 mb-8">
-            <div class="bg-gradient-to-r from-brand-pink/10 to-brand-purple/10 p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-2">Business Automation</h3>
-              <p class="text-muted-foreground">Automating tasks like invoice processing, meeting scheduling, and customer inquiries.</p>
-            </div>
-            <div class="bg-gradient-to-r from-brand-purple/10 to-brand-blue/10 p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-2">Customer Service</h3>
-              <p class="text-muted-foreground">Intelligent support agents that handle routine questions and escalate complex issues.</p>
-            </div>
-            <div class="bg-gradient-to-r from-brand-blue/10 to-brand-pink/10 p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-2">Finance</h3>
-              <p class="text-muted-foreground">Monitoring markets, executing trades, detecting fraud, and offering personalized advice.</p>
-            </div>
-            <div class="bg-gradient-to-r from-brand-pink/10 to-brand-purple/10 p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-2">Healthcare</h3>
-              <p class="text-muted-foreground">Appointment scheduling, medication reminders, and preliminary health assessments.</p>
-            </div>
-            <div class="bg-gradient-to-r from-brand-purple/10 to-brand-blue/10 p-6 rounded-lg border border-border">
-              <h3 class="text-xl font-semibold text-foreground mb-2">Smart Homes & IoT</h3>
-              <p class="text-muted-foreground">Optimizing energy use, enhancing security, and personalizing living spaces.</p>
-            </div>
-          </div>
-
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Why AI Agents Matter</h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div class="text-center p-6 bg-card rounded-lg border border-border">
-              <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock class="w-8 h-8 text-white" />
-              </div>
-              <h3 class="text-lg font-semibold text-foreground mb-2">Efficiency</h3>
-              <p class="text-muted-foreground text-sm">AI agents work 24/7, processing tasks at incredible speeds.</p>
-            </div>
-            <div class="text-center p-6 bg-card rounded-lg border border-border">
-              <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <User class="w-8 h-8 text-white" />
-              </div>
-              <h3 class="text-lg font-semibold text-foreground mb-2">Better Decisions</h3>
-              <p class="text-muted-foreground text-sm">They analyze vast data sets, uncovering insights humans might miss.</p>
-            </div>
-            <div class="text-center p-6 bg-card rounded-lg border border-border">
-              <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Share2 class="w-8 h-8 text-white" />
-              </div>
-              <h3 class="text-lg font-semibold text-foreground mb-2">Scalability</h3>
-              <p class="text-muted-foreground text-sm">Deploy agents as needed, with minimal added cost.</p>
-            </div>
-          </div>
-
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">The Future of AI Agents</h2>
-          <p class="text-lg text-muted-foreground mb-6">The next generation of AI agents will be smarter, more intuitive, and deeply integrated with emerging technologies like quantum computing, 5G, and robotics. Expect AI agents that:</p>
-          <ul class="list-disc pl-6 space-y-2 text-lg text-muted-foreground mb-8">
-            <li>Understand complex language and context</li>
-            <li>Collaborate seamlessly with humans</li>
-            <li>Exhibit emotional intelligence</li>
-            <li>Solve creative and technical challenges</li>
-            <li>Operate across industries from healthcare to education to scientific research</li>
-          </ul>
-
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">How to Get Started with AI Agents</h2>
-          <ol class="list-decimal pl-6 space-y-3 text-lg text-muted-foreground mb-8">
-            <li>Identify repetitive, rule-based processes ripe for automation.</li>
-            <li>Implement AI agents for manageable use cases.</li>
-            <li>Gradually scale to more complex tasks.</li>
-            <li>Invest in team training, infrastructure, and AI governance.</li>
-          </ol>
-
-          <div class="bg-gradient-to-r from-brand-pink/10 via-brand-purple/10 to-brand-blue/10 p-8 rounded-lg border border-border mt-12">
-            <h2 class="text-3xl font-bold text-foreground mb-6">Conclusion: Humans + AI Agents = The Future</h2>
-            <p class="text-lg text-muted-foreground mb-4">AI agents are reshaping how we automate work, make decisions, and create value. They're not here to replace human intelligence — but to augment it, freeing us to focus on creativity, relationships, and strategic thinking.</p>
-            <p class="text-lg text-muted-foreground">The AI agent revolution is underway. By embracing this technology responsibly, we can unlock a future where intelligent automation drives innovation, productivity, and progress — for businesses, individuals, and society as a whole.</p>
-          </div>
+        <div class="bg-gradient-to-r from-brand-pink/10 via-brand-purple/10 to-brand-blue/10 p-8 rounded-lg border border-border mt-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Conclusion</h2>
+          <p class="text-lg text-muted-foreground mb-4">
+            2025 belongs to businesses that think beyond manual effort and start building with intelligence. Automation isn’t about doing less — it’s about achieving more with less effort.
+          </p>
+          <p class="text-lg text-muted-foreground">
+            The question isn’t if your business will start using AI. It’s how soon.
+          </p>
         </div>
-      `,
+      </div>
+    `,
+    },
+
+    "ai-revolution-now": {
+      id: "ai-revolution-now",
+      title: "🚀 The AI Revolution Is Here — And It Won’t Wait for You",
+      excerpt:
+        "The AI revolution isn’t coming — it’s already here, transforming industries and redefining competition. Early adopters aren’t just improving efficiency; they’re building intelligent systems that continuously learn and evolve.",
+      image: "/src/assets/Blog2.jpg",
+      date: "Nov 7, 2025",
+      author: "Indication Technology Pvt Ltd",
+      readTime: "7 min read",
+      tags: [
+        "#AI",
+        "#ArtificialIntelligence",
+        "#BusinessStrategy",
+        "#CompetitiveAdvantage",
+        "#DigitalTransformation",
+        "#Innovation",
+      ],
+      content: `
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-muted-foreground mb-8">
+          The AI revolution isn’t coming — it’s already here, reshaping markets faster than many realize. Businesses still treating AI as a future experiment are missing the current competitive window. Early adopters aren’t just gaining efficiency — they’re fundamentally altering their market positions.
+        </p>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">From Efficiency to Evolution</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          AI doesn’t just make operations faster — it transforms them. Companies that deploy AI today are re-architecting how decisions, products, and customer experiences are built.
+          This is not incremental progress — it’s exponential transformation.
+        </p>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">The True Competitive Edge</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          The real advantage lies in proprietary data models and continuous learning systems. Each implementation generates more data, refining algorithms and strengthening insights — creating a feedback loop that late adopters can’t easily replicate.
+        </p>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">The Cost of Waiting</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          Waiting for AI to ‘mature’ is a strategic mistake. Competitors are already automating, personalizing, and optimizing at scale. Delaying adoption means falling behind not just in technology — but in accumulated intelligence.
+        </p>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Building an AI-First Culture</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          Winning in the AI era isn’t about tools — it’s about culture. AI-first organizations prioritize learning, experimentation, and alignment between human creativity and machine intelligence.
+        </p>
+
+        <div class="bg-gradient-to-r from-brand-blue/10 via-brand-purple/10 to-brand-pink/10 p-8 rounded-lg border border-border mt-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">The Moment for Action Is Now</h2>
+          <p class="text-lg text-muted-foreground mb-4">
+            The future isn’t waiting for anyone. Every day delayed is a day your competitors’ algorithms get smarter. The time for deliberation is over — the time for strategic AI integration is now.
+          </p>
+          <p class="text-lg text-muted-foreground">
+            What steps are you taking today to ensure your business doesn’t become another casualty of AI inertia?
+          </p>
+        </div>
+      </div>
+    `,
+    },
+
+    "data-intelligence": {
+      id: "data-intelligence",
+      title: "Your Data. Our Intelligence. Limitless Possibilities.",
+      excerpt:
+        "In the digital era, data alone doesn’t create advantage — intelligence does. Learn how Indication Technology Pvt Ltd transforms raw information into actionable insights that power growth and innovation.",
+      image: "/src/assets/Blog3.jpg",
+      date: "Nov 13, 2025",
+      author: "Indication Technology Pvt Ltd",
+      readTime: "8 min read",
+      tags: [
+        "#AI",
+        "#DataAnalytics",
+        "#BusinessIntelligence",
+        "#DigitalTransformation",
+        "#Innovation",
+        "#MachineLearning",
+      ],
+      content: `
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-muted-foreground mb-8">
+          The world runs on data — but only the intelligent know how to use it. Every click, transaction, and interaction tells a story. Yet for many organizations, that story remains untold — buried under mountains of unstructured information.
+        </p>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">The Power of Data Intelligence</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          Data alone is passive. Intelligence turns it into action. By combining Artificial Intelligence, Machine Learning, and Business Intelligence, organizations can unlock predictive and prescriptive insights that drive real outcomes.
+        </p>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Key Pillars of Intelligent Transformation</h2>
+        <ul class="list-disc pl-6 space-y-3 text-lg text-muted-foreground mb-8">
+          <li><strong>Integration:</strong> Unified data across all business systems.</li>
+          <li><strong>Advanced Analytics:</strong> From historical reports to predictive forecasts.</li>
+          <li><strong>Automation:</strong> Streamlined decision-making with real-time insights.</li>
+          <li><strong>Visualization:</strong> Turning complex data into clear stories.</li>
+          <li><strong>Continuous Learning:</strong> Systems that evolve as your business grows.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">The Shift from Data-Driven to Intelligence-Driven</h2>
+        <p class="text-lg text-muted-foreground mb-6">
+          Being data-driven was once enough. Today, leaders are intelligence-driven — using AI to anticipate trends, personalize customer experiences, and innovate faster than competitors.
+        </p>
+
+        <div class="bg-gradient-to-r from-brand-purple/10 via-brand-blue/10 to-brand-pink/10 p-8 rounded-lg border border-border mt-12">
+          <h2 class="text-3xl font-bold text-foreground mb-6">Conclusion: Turning Insight into Impact</h2>
+          <p class="text-lg text-muted-foreground mb-4">
+            At Indication Technology Pvt Ltd, we help businesses evolve from data-driven to intelligence-driven. Because data alone doesn’t create advantage — intelligence does.
+          </p>
+          <p class="text-lg text-muted-foreground">
+            Let’s unlock your data’s full potential. Let’s turn insight into impact. 🚀
+          </p>
+        </div>
+      </div>
+    `,
     },
     "web-dev-trends": {
       id: "web-dev-trends",
-      title: "How AI is Changing Web Development",
+      title: "🚀 The AI Revolution Is Here — And It Won’t Wait for You",
       excerpt:
-        "A breakdown of how AI tools are enhancing design, coding, and user experience.",
-      image:
-        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
-      date: "Dec 10, 2024",
-      author: "AI Team",
-      readTime: "6 min read",
-      tags: ["Web Development", "AI", "Design", "UX"],
+        "The AI revolution isn't coming — it’s already transforming industries at lightning speed. Businesses waiting for AI to ‘mature’ are losing ground, while early adopters are redefining their markets with smarter systems and data-driven intelligence.",
+      image: "/src/assets/Blog2.png",
+      date: "Nov 10, 2025",
+      author: "Indication Technology Pvt Ltd",
+      readTime: "7 min read",
+      tags: [
+        "#AI",
+        "#ArtificialIntelligence",
+        "#BusinessStrategy",
+        "#CompetitiveAdvantage",
+        "#DigitalTransformation",
+        "#Innovation",
+      ],
       content: `
-        <div class="prose prose-lg max-w-none">
-          <p class="text-xl text-muted-foreground mb-8">Artificial Intelligence is revolutionizing web development, transforming how we design, code, and optimize user experiences. From automated code generation to intelligent design systems, AI is becoming an indispensable tool for modern web developers.</p>
+    <div class="prose prose-lg max-w-none">
+      <p class="text-xl text-muted-foreground mb-8">
+        The AI revolution isn't coming; it's already here — reshaping industries, redefining efficiency, and accelerating innovation. Businesses still treating AI as a “future experiment” are missing today’s competitive advantage. This shift isn't about incremental improvement — it's about exponential transformation.
+      </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">AI-Powered Code Generation</h2>
-          <p class="text-lg text-muted-foreground mb-6">Tools like GitHub Copilot and ChatGPT are changing how developers write code. These AI assistants can generate entire functions, suggest optimizations, and even help debug complex issues in real-time.</p>
+      <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Early Adopters Are Building a Data Moat</h2>
+      <p class="text-lg text-muted-foreground mb-6">
+        The most powerful advantage in the AI era isn’t just technology — it’s intelligence. Companies that integrate AI early are cultivating proprietary data models, creating smarter systems, and refining feedback loops that continuously learn and improve.
+      </p>
+      <p class="text-lg text-muted-foreground mb-6">
+        Every implementation adds more data, more context, and more insight — compounding over time into a data moat that late adopters can’t easily cross.
+      </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Intelligent Design Systems</h2>
-          <p class="text-lg text-muted-foreground mb-6">AI is enabling the creation of smart design systems that can automatically generate layouts, choose color schemes, and optimize typography based on content and user preferences.</p>
+      <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">The Cost of Waiting</h2>
+      <p class="text-lg text-muted-foreground mb-6">
+        Waiting for AI to ‘mature’ is no longer a cautious strategy — it’s surrender. While some hesitate, others are already automating operations, personalizing customer experiences, and optimizing decision-making at scale.
+      </p>
+      <p class="text-lg text-muted-foreground mb-6">
+        Those who delay adoption will find their margins shrinking, top talent migrating, and market relevance fading. In the era of hyper-automation, complacency equals obsolescence.
+      </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Enhanced User Experience</h2>
-          <p class="text-lg text-muted-foreground mb-6">Machine learning algorithms analyze user behavior to personalize content, predict user needs, and optimize conversion rates through intelligent A/B testing.</p>
-        </div>
-      `,
+      <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Build an AI-First Culture</h2>
+      <p class="text-lg text-muted-foreground mb-6">
+        Integrating AI isn’t just a technical upgrade — it’s a strategic mindset. Organizations that thrive will embed AI into their culture, empowering teams to innovate faster, automate smarter, and act on insights in real time.
+      </p>
+
+      <div class="bg-gradient-to-r from-brand-blue/10 via-brand-purple/10 to-brand-pink/10 p-8 rounded-lg border border-border mt-12">
+        <h2 class="text-3xl font-bold text-foreground mb-6">The Time to Act Is Now</h2>
+        <p class="text-lg text-muted-foreground mb-4">
+          The AI revolution rewards bold action and punishes hesitation. The question isn’t whether AI will reshape your industry — it’s whether your business will lead or follow.
+        </p>
+        <p class="text-lg text-muted-foreground">
+          Build an AI-first foundation, invest in intelligent systems, and start today — because in tomorrow’s economy, speed, learning, and intelligence will define survival.
+        </p>
+      </div>
+    </div>
+  `,
     },
     "mobile-app-importance": {
       id: "mobile-app-importance",
-      title: "Why Every Brand Needs a Mobile App",
+      title: "💡 Your Data. Our Intelligence. Limitless Possibilities.",
       excerpt:
-        "Discover the strategic importance of having a mobile-first approach in 2025.",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop",
-      date: "Dec 5, 2024",
-      author: "Mobile Team",
-      readTime: "5 min read",
-      tags: ["Mobile", "Apps", "Business", "Strategy"],
+        "Every click, transaction, and number tells a story — but without the right intelligence, it’s just noise. At Indication Technology, we transform raw data into meaningful insights that help businesses predict, decide, and grow faster.",
+      image: "/src/assets/Blog3.jpg",
+      date: "Nov 14, 2025",
+      author: "Indication Technology Pvt Ltd",
+      readTime: "6 min read",
+      tags: [
+        "#AI",
+        "#ArtificialIntelligence",
+        "#BusinessIntelligence",
+        "#DataAnalytics",
+        "#Innovation",
+        "#TechForGrowth",
+        "#MachineLearning",
+      ],
       content: `
-        <div class="prose prose-lg max-w-none">
-          <p class="text-xl text-muted-foreground mb-8">In today's digital landscape, having a mobile app isn't just an advantage—it's a necessity. With mobile usage continuing to dominate internet traffic, brands that don't prioritize mobile-first strategies risk being left behind.</p>
+    <div class="prose prose-lg max-w-none">
+      <p class="text-xl text-muted-foreground mb-8">
+        Your data isn’t just information — it’s untapped intelligence waiting to be awakened. Every number, click, and transaction holds insights about customer behavior, market trends, and operational efficiency. But without the right intelligence to decode it, data is just noise.
+      </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Mobile Usage Statistics</h2>
-          <p class="text-lg text-muted-foreground mb-6">Over 60% of web traffic now comes from mobile devices, and users spend 90% of their mobile time in apps rather than browsers. This shift represents a fundamental change in how consumers interact with brands.</p>
+      <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">From Data to Intelligence</h2>
+      <p class="text-lg text-muted-foreground mb-6">
+        At <strong>Indication Technology Pvt Ltd</strong>, we help businesses transform raw, scattered data into structured intelligence that drives smarter decisions. Our AI-driven analytics systems convert complexity into clarity — revealing opportunities hidden in plain sight.
+      </p>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Enhanced Customer Engagement</h2>
-          <p class="text-lg text-muted-foreground mb-6">Mobile apps provide direct access to customers through push notifications, personalized content, and seamless user experiences that keep users engaged and coming back.</p>
+      <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Actionable Insights That Drive Growth</h2>
+      <p class="text-lg text-muted-foreground mb-6">
+        We go beyond dashboards and reports. By combining AI, machine learning, and automation, we deliver predictive insights — helping you anticipate market shifts, personalize experiences, and optimize operations.
+      </p>
+      <ul class="list-disc pl-6 space-y-3 text-lg text-muted-foreground mb-8">
+        <li>Uncover patterns that reveal customer intent.</li>
+        <li>Forecast business outcomes with predictive analytics.</li>
+        <li>Automate decision-making across key operations.</li>
+        <li>Empower teams with real-time data intelligence.</li>
+      </ul>
 
-          <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Competitive Advantage</h2>
-          <p class="text-lg text-muted-foreground mb-6">Brands with well-designed mobile apps often see higher customer retention rates, increased sales, and stronger brand loyalty compared to those relying solely on web presence.</p>
-        </div>
-      `,
+      <h2 class="text-3xl font-bold text-foreground mb-6 mt-12">Why Intelligence Beats Information</h2>
+      <p class="text-lg text-muted-foreground mb-6">
+        In today’s fast-moving world, data alone isn’t a competitive advantage — intelligence is. Businesses that harness data effectively are not just reacting to trends; they’re shaping them.
+      </p>
+
+      <div class="bg-gradient-to-r from-brand-pink/10 via-brand-purple/10 to-brand-blue/10 p-8 rounded-lg border border-border mt-12">
+        <h2 class="text-3xl font-bold text-foreground mb-6">Turning Insight into Impact</h2>
+        <p class="text-lg text-muted-foreground mb-4">
+          The future belongs to businesses that act intelligently, not just collect information. At Indication Technology, we help you unlock your data’s full potential — transforming insight into measurable business impact.
+        </p>
+        <p class="text-lg text-muted-foreground">
+          🚀 <strong>Your Data. Our Intelligence. Limitless Possibilities.</strong>
+        </p>
+      </div>
+    </div>
+  `,
     },
   };
 
@@ -301,8 +418,8 @@ const BlogDetail = () => {
                 style={{ animationDelay: "0.2s" }}
               >
                 <div className="flex items-center space-x-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>{blog.date}</span>
+                  {/* <Calendar className="w-4 h-4" /> */}
+                  {/* <span>{blog.date}</span> */}
                 </div>
                 <div className="flex items-center space-x-2">
                   <User className="w-4 h-4" />
@@ -310,7 +427,10 @@ const BlogDetail = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4" />
-                  <span>{blog.readTime}</span>
+                  <span>{blog.date}</span>
+                  <span className="text-muted-foreground">
+                    • {getDaysAgo(blog.date)}
+                  </span>
                 </div>
               </div>
             </div>

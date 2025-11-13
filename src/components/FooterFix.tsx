@@ -217,13 +217,13 @@ const FooterFix = () => {
               bg: "bg-blue-600",
               link: "https://www.linkedin.com/company/indication-technology-pvt-ltd/",
             },
-            { Icon: Twitter, bg: "bg-blue-400", link: "#" },
+            // { Icon: Twitter, bg: "bg-blue-400", link: "#" },
             {
               Icon: Instagram,
               bg: "bg-pink-500",
               link: "https://www.instagram.com/indication_tech/?utm_source=qr&igsh=MWFmOWNucGdjbWg2#",
             },
-            { Icon: Facebook, bg: "bg-blue-700", link: "#" },
+            // { Icon: Facebook, bg: "bg-blue-700", link: "#" },
             {
               Icon: ImWhatsapp,
               bg: "bg-green-500",

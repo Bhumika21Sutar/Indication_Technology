@@ -46,7 +46,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="about-section bg-gradient-hero">
+    <section id="about-us" className="about-section bg-gradient-hero">
       <div className="about-container">
         <div className="about-grid">
           {/* Image */}
