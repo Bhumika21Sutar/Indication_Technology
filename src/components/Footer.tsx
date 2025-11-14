@@ -18,43 +18,46 @@ const Footer = () => {
             />
           </div>
 
-          {/* Quick Links */}
+          {/* Services */}
           <div className="text-center sm:text-left">
+            {" "}
             <h4 className="font-poppins font-semibold text-lg mb-3">
-              Quick Links
-            </h4>
+              {" "}
+              Services{" "}
+            </h4>{" "}
             <ul className="space-y-2 text-gray-300">
+              {" "}
               <li>
-                <Link to="/" className="hover:text-brand-purple">
-                  Home
-                </Link>
-              </li>
+                {" "}
+                <Link
+                  to="/web-development"
+                  className="hover:text-brand-purple transition-colors duration-300"
+                >
+                  {" "}
+                  Web Development{" "}
+                </Link>{" "}
+              </li>{" "}
               <li>
-                <Link to="/services" className="hover:text-brand-purple">
-                  Services
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/careers" className="hover:text-brand-purple">
-                  Careers
-                </Link>
-              </li> */}
+                {" "}
+                <Link
+                  to="/app-development"
+                  className="hover:text-brand-purple transition-colors duration-300"
+                >
+                  {" "}
+                  Mobile App Development{" "}
+                </Link>{" "}
+              </li>{" "}
               <li>
-                <Link to="/about" className="hover:text-brand-purple">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-brand-purple">
-                  Contact
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/privacy-policy" className="hover:text-brand-purple">
-                  Privacy Policy
-                </Link>
-              </li> */}
-            </ul>
+                {" "}
+                <Link
+                  to="/ai-services"
+                  className="hover:text-brand-purple transition-colors duration-300"
+                >
+                  {" "}
+                  AI Services{" "}
+                </Link>{" "}
+              </li>{" "}
+            </ul>{" "}
           </div>
 
           {/* Contact Us */}
