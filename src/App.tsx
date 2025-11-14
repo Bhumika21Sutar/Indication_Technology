@@ -16,6 +16,8 @@ import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 import ScrollSync from "./components/ScrollSync";
 
+import ContactModalPage from "./pages/ContactModalPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/web-development" element={<WebDevelopment />} />
             <Route path="/app-development" element={<AppDevelopment />} />
             <Route path="/ai-services" element={<AIServices />} />
+
+            <Route path="/contact" element={<ContactModalPage />} />
 
             <Route path="/blog/:id" element={<BlogDetail />} />
 

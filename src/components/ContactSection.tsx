@@ -279,12 +279,22 @@ function ContactSection() {
             className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
           />
           <input
-            type="text"
+            type="tel"
             name="phone"
             placeholder="Enter your phone number"
             required
+            inputMode="numeric"
+            pattern="[0-9]*"
+            maxLength={10}
+            onInput={(e) => {
+              e.currentTarget.value = e.currentTarget.value.replace(
+                /[^0-9]/g,
+                ""
+              );
+            }}
             className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-pink-500 outline-none text-sm sm:text-base"
           />
+
           <textarea
             name="message"
             placeholder="Enter your message"

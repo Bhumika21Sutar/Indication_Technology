@@ -3,43 +3,44 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 import FooterFix from "@/components/FooterFix";
-import Image from "../assets/app1Background.png";
+import { loadImage } from "../lib/utils";
+// import Image from "../assets/app1Background.png";
 import { motion } from "framer-motion";
-import client1 from "../assets/TFox.webp";
-import client2 from "../assets/leaderlogo.png";
-import client3 from "../assets/barbera.jpg";
-import client4 from "../assets/Client4.jpg";
-import client5 from "../assets/client5.png";
-import client6 from "../assets/gig.jpg";
-import client7 from "../assets/Client6.png";
+// import client1 from "../assets/TFox.webp";
+// import client2 from "../assets/leaderlogo.png";
+// import client3 from "../assets/barbera.jpg";
+// import client4 from "../assets/Client4.jpg";
+// import client5 from "../assets/client5.png";
+// import client6 from "../assets/gig.jpg";
+// import client7 from "../assets/Client6.png";
 
 import ContactModal from "../pages/ContactModal"; //
 
-import work1 from "../assets/work1.png";
-import work2 from "../assets/work2.png";
-import work3 from "../assets/work3.png";
-import work4 from "../assets/work4.png";
-import work5 from "../assets/work5.png";
+// import work1 from "../assets/work1.png";
+// import work2 from "../assets/work2.png";
+// import work3 from "../assets/work3.png";
+// import work4 from "../assets/work4.png";
+// import work5 from "../assets/work5.png";
 
-import lang1 from "../assets/android.png";
-import lang2 from "../assets/java.png";
-import lang3 from "../assets/Kotlin_Icon.png";
-import lang4 from "../assets/apple.png";
-import lang5 from "../assets/UiUx.png";
-import lang6 from "../assets/swift.png";
-import lang7 from "../assets/flutter.png";
-import lang8 from "../assets/library.png";
-import lang9 from "../assets/figma.png";
-import lang10 from "../assets/cordova_bot.png";
+// import lang1 from "../assets/android.png";
+// import lang2 from "../assets/java.png";
+// import lang3 from "../assets/Kotlin_Icon.png";
+// import lang4 from "../assets/apple.png";
+// import lang5 from "../assets/UiUx.png";
+// import lang6 from "../assets/swift.png";
+// import lang7 from "../assets/flutter.png";
+// import lang8 from "../assets/library.png";
+// import lang9 from "../assets/figma.png";
+// import lang10 from "../assets/cordova_bot.png";
 
 import plan from "../assets/B2.jpeg";
 
-import Pro1 from "../assets/healthcare.png";
-import Pro2 from "../assets/social-media.png";
-import Pro3 from "../assets/travel-and-tourism.png";
-import Pro4 from "../assets/hand.png";
-import Pro5 from "../assets/carts.png";
-import Pro6 from "../assets/photo-editing.png";
+// import Pro1 from "../assets/healthcare.png";
+// import Pro2 from "../assets/social-media.png";
+// import Pro3 from "../assets/travel-and-tourism.png";
+// import Pro4 from "../assets/hand.png";
+// import Pro5 from "../assets/carts.png";
+// import Pro6 from "../assets/photo-editing.png";
 
 import FeaturesWithPhone from "../components/FeaturesWithPhone";
 import { Button } from "@/components/ui/button";
@@ -73,37 +74,37 @@ const AppDevelopment = () => {
 
   const appCategories = [
     {
-      image: Pro1,
+      image: loadImage("healthcare.png"),
       title: "Health and Fitness Apps",
       description:
         "Apps for tracking personal fitness goals, providing workout routines, and monitoring essential health metrics like steps, calories, and sleep patterns.",
     },
     {
-      image: Pro2,
+      image: loadImage("social-media.png"),
       title: "Social Networking Apps",
       description:
         "Platforms connecting users globally, enabling sharing of updates, photos, and videos, and fostering communities based on interests or professions.",
     },
     {
-      image: Pro3,
+      image: loadImage("travel-and-tourism.png"),
       title: "Travel and Tourism Apps",
       description:
         "Tools for planning trips, booking accommodations, finding attractions, and navigating unfamiliar locations with maps and local guides.",
     },
     {
-      image: Pro4,
+      image: loadImage("hand.png"),
       title: "Finance Management Apps",
       description:
         "Apps helping users budget, track expenses, manage investments, and handle transactions securely with banking integration, financial advice, real-time spending alerts.",
     },
     {
-      image: Pro5,
+      image: loadImage("carts.png"),
       title: "Shopping and E-commerce Apps",
       description:
         "Platforms facilitating online shopping with product comparisons, secure payments, and delivery tracking, enhancing the shopping experience with personalized recommendations.",
     },
     {
-      image: Pro6,
+      image: loadImage("photo-editing.png"),
       title: "Photography and Editing Apps",
       description:
         "Apps offering tools for capturing, editing, and sharing photos and videos, featuring filters, effects, and organizational features for creative expression.",
@@ -115,45 +116,45 @@ const AppDevelopment = () => {
       title: "PARTEX",
       description:
         "Partex is an ambitious B2B e-commerce marketplace aiming to emerge as the largest and most dependable platform for auto component buyers worldwide.",
-      image: work1, // ✅ just work1, not { work1 }
+      image: loadImage("work1.png"),
     },
     {
       title: "HAILZ",
       description:
         "Welcome to Hailz, the trusted app for ride-hailing and deliveries, connecting you with experienced drivers anytime, anywhere, including New York City.",
-      image: work2,
+      image: loadImage("work2.png"),
     },
     {
       title: "GLOWSY",
       description:
         "Glowsy is a rapidly growing aesthetic software empowering patients nationwide to find top aesthetic doctors for all their cosmetic needs.",
-      image: work3,
+      image: loadImage("work3.png"),
     },
     {
       title: "HOUSE OF DELIVERANCE",
       description:
         "Carry Hindi and English song lyrics in your pocket with our app, featuring a collection of over 100 songs. Users can even request specific songs to be added.",
-      image: work4,
+      image: loadImage("work4.png"),
     },
     {
       title: "ARTISAN EXPRESS",
       description:
         "Explore Artisan Express, your go-to online shopping destination offering a wide range of products across all categories, ensuring choice and convenience.",
-      image: work5,
+      image: loadImage("work5.png"),
     },
   ];
 
   const languages = [
-    { name: "Android Native development", logo: lang1 },
-    { name: "Java", logo: lang2 },
-    { name: "Kotlin", logo: lang3 },
-    { name: "iOS Native Development", logo: lang4 },
-    { name: "UI/UX", logo: lang5 },
-    { name: "Swift", logo: lang6 },
-    { name: "Flutter (Hybrid)", logo: lang7 },
-    { name: "React Native (Hybrid)", logo: lang8 },
-    { name: "Figma", logo: lang9 },
-    { name: "Cordova (Hybrid)", logo: lang10 },
+    { name: "Android Native development", logo: loadImage("android.png") },
+    { name: "Java", logo: loadImage("java.png") },
+    { name: "Kotlin", logo: loadImage("Kotlin_Icon.png") },
+    { name: "iOS Native Development", logo: loadImage("apple.png") },
+    { name: "UI/UX", logo: loadImage("UiUx.png") },
+    { name: "Swift", logo: loadImage("swift.png") },
+    { name: "Flutter (Hybrid)", logo: loadImage("flutter.png") },
+    { name: "React Native (Hybrid)", logo: loadImage("library.png") },
+    { name: "Figma", logo: loadImage("figma.png") },
+    { name: "Cordova (Hybrid)", logo: loadImage("cordova_bot.png") },
   ];
 
   const faqs = [
@@ -192,11 +193,11 @@ const AppDevelopment = () => {
       <section
         className="relative flex items-center justify-center text-center"
         style={{
-          backgroundImage: `url(${Image})`,
+          backgroundImage: `url(${loadImage("app1Background.png")})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          height: "500px", // adjust height as needed
+          height: "500px",
         }}
       >
         <div className="relative z-10 text-white px-6">
@@ -272,40 +273,33 @@ const AppDevelopment = () => {
             animate={{ x: ["100%", "-100%"] }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
-            {/* <img src={client1} alt="Client 1" className="h-12 w-64" /> */}
             <img
-              src={client2}
-              alt="Client 2"
+              src={loadImage("leaderlogo.png")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client3}
-              alt="Client 3"
+              src={loadImage("barbera.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client4}
-              alt="Client 4"
+              src={loadImage("Client4.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client5}
-              alt="Client 5"
+              src={loadImage("client5.png")}
               className="h-10 w-64"
               loading="lazy"
             />
             <img
-              src={client6}
-              alt="Client 6"
+              src={loadImage("gig.jpg")}
               className="h-8 w-64"
               loading="lazy"
             />
             <img
-              src={client7}
-              alt="Client 7"
+              src={loadImage("Client6.png")}
               className="h-10 w-64"
               loading="lazy"
             />
@@ -313,38 +307,32 @@ const AppDevelopment = () => {
             {/* Duplicates */}
             {/* <img src={client1} alt="Client 1" className="h-10 w-64" /> */}
             <img
-              src={client2}
-              alt="Client 2"
+              src={loadImage("leaderlogo.png")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client3}
-              alt="Client 3"
+              src={loadImage("barbera.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client4}
-              alt="Client 4"
+              src={loadImage("Client4.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client5}
-              alt="Client 5"
+              src={loadImage("client5.png")}
               className="h-10 w-64"
               loading="lazy"
             />
             <img
-              src={client6}
-              alt="Client 6"
+              src={loadImage("gig.jpg")}
               className="h-8 w-64"
               loading="lazy"
             />
             <img
-              src={client7}
-              alt="Client 7"
+              src={loadImage("Client6.png")}
               className="h-10 w-64"
               loading="lazy"
             />
@@ -357,8 +345,7 @@ const AppDevelopment = () => {
           <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="relative w-full">
               <img
-                src={plan}
-                alt="Team working"
+                src={loadImage("B2.jpeg")}
                 loading="lazy"
                 className="rounded-xl shadow-lg w-full h-69 object-cover"
               />

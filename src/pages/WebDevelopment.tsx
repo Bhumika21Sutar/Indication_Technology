@@ -2,24 +2,27 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 import FooterFix from "@/components/FooterFix";
-import Image from "../assets/pankaj-patel-_SgRNwAVNKw-unsplash.jpg";
+// import Image from "../assets/pankaj-patel-_SgRNwAVNKw-unsplash.jpg";
+
+import { loadImage } from "../lib/utils";
+
 import { motion } from "framer-motion";
-import client1 from "../assets/TFox.webp";
-import client2 from "../assets/leaderlogo.png";
-import client3 from "../assets/barbera.jpg";
-import client4 from "../assets/Client4.jpg";
-import client5 from "../assets/client5.png";
-import client6 from "../assets/gig.jpg";
-import client7 from "../assets/Client6.png";
+// import client1 from "../assets/TFox.webp";
+// import client2 from "../assets/leaderlogo.png";
+// import client3 from "../assets/barbera.jpg";
+// import client4 from "../assets/Client4.jpg";
+// import client5 from "../assets/client5.png";
+// import client6 from "../assets/gig.jpg";
+// import client7 from "../assets/Client6.png";
 
 import ContactModal from "../pages/ContactModal";
 
-import work1 from "../assets/Adobe Express - file (9).png";
-import work2 from "../assets/Adobe Express - file (7).png";
-import work3 from "../assets/Adobe Express - file (12).png";
-import work4 from "../assets/Adobe Express - file (11).png";
-import work5 from "../assets/Adobe Express - file (10).png";
-import work6 from "../assets/Adobe Express - file (1).png";
+// import work1 from "../assets/Adobe Express - file (9).png";
+// import work2 from "../assets/Adobe Express - file (7).png";
+// import work3 from "../assets/Adobe Express - file (12).png";
+// import work4 from "../assets/Adobe Express - file (11).png";
+// import work5 from "../assets/Adobe Express - file (10).png";
+// import work6 from "../assets/Adobe Express - file (1).png";
 
 import lang1 from "../assets/programing.png";
 import lang2 from "../assets/document.png";
@@ -43,12 +46,12 @@ import lang18 from "../assets/database.png";
 
 import plan from "../assets/B2.jpeg";
 
-import Pro1 from "../assets/shopping-cart.png";
-import Pro2 from "../assets/digitalization.png";
-import Pro3 from "../assets/e-learning.png";
-import Pro4 from "../assets/crm.png";
-import Pro5 from "../assets/airplane.png";
-import Pro6 from "../assets/live-chat.png";
+// import Pro1 from "../assets/shopping-cart.png";
+// import Pro2 from "../assets/digitalization.png";
+// import Pro3 from "../assets/e-learning.png";
+// import Pro4 from "../assets/crm.png";
+// import Pro5 from "../assets/airplane.png";
+// import Pro6 from "../assets/live-chat.png";
 
 import FeatureWithWeb from "../components/FeaturesWithWeb";
 import { Button } from "@/components/ui/button";
@@ -82,62 +85,71 @@ const AppDevelopment = () => {
 
   const appCategories = [
     {
-      image: Pro1,
+      image: loadImage("shopping-cart.png"),
       title: "E-commerce Applications",
       description:
         "Our ecommerce applications provide a seamless shopping experience. With secure payment gateways, intuitive navigation, and personalized recommendations, we help businesses boost sales and engage customers effectively.",
     },
     {
-      image: Pro2,
+      image: loadImage("digitalization.png"),
       title: "Social Media Platforms",
       description:
         "We create social media platforms that connect people worldwide. Featuring real-time updates, multimedia sharing, and robust privacy controls, our solutions foster community engagement and dynamic interactions.",
     },
     {
-      image: Pro3,
+      image: loadImage("e-learning.png"),
       title: "Online Learning Platforms",
       description:
         "Our online learning platforms offer interactive courses and resources. With features like live classes, quizzes, and progress tracking, we make education accessible and engaging for learners of all ages.",
     },
     {
-      image: Pro4,
+      image: loadImage("crm.png"),
       title: "Customer Relation Management",
       description:
         "Enhance customer relationships with our CRM solutions. Offering contact management, sales tracking, and customer support tools, our CRMs help businesses streamline processes.",
     },
     {
-      image: Pro5,
+      image: loadImage("airplane.png"),
       title: "Travel and Tourism Websites",
       description:
         "Our travel and tourism websites provide comprehensive travel planning. With features like booking systems, destination guides, and user reviews, we help users plan memorable trips and experiences.",
     },
     {
-      image: Pro6,
+      image: loadImage("live-chat.png"),
       title: "Real-time Chat Applications",
       description:
         "Our real-time chat apps enable instant communication. Featuring secure messaging, file sharing, and video calls, our solutions enhance connectivity and collaboration for both personal and professional use",
     },
   ];
 
+  // const portfolioItems = [
+  //   {
+  //     image: work1,
+  //   },
+  //   {
+  //     image: work2,
+  //   },
+  //   {
+  //     image: work3,
+  //   },
+  //   {
+  //     image: work4,
+  //   },
+  //   {
+  //     image: work5,
+  //   },
+  //   {
+  //     image: work6,
+  //   },
+  // ];
+
   const portfolioItems = [
-    {
-      image: work1,
-    },
-    {
-      image: work2,
-    },
-    {
-      image: work3,
-    },
-    {
-      image: work4,
-    },
-    {
-      image: work5,
-    },
-    {
-      image: work6,
-    },
+    { image: loadImage("Adobe Express - file (9).png") },
+    { image: loadImage("Adobe Express - file (7).png") },
+    { image: loadImage("Adobe Express - file (12).png") },
+    { image: loadImage("Adobe Express - file (11).png") },
+    { image: loadImage("Adobe Express - file (10).png") },
+    { image: loadImage("Adobe Express - file (1).png") },
   ];
 
   const languages = [
@@ -201,7 +213,9 @@ const AppDevelopment = () => {
       <section
         className="relative flex items-center justify-center text-center"
         style={{
-          backgroundImage: `url(${Image})`,
+          backgroundImage: `url(${loadImage(
+            "pankaj-patel-_SgRNwAVNKw-unsplash.jpg"
+          )})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -268,79 +282,65 @@ const AppDevelopment = () => {
             animate={{ x: ["100%", "-100%"] }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
-            {/* <img src={client1} alt="Client 1" className="h-12 w-64" /> */}
             <img
-              src={client2}
-              alt="Client 2"
+              src={loadImage("leaderlogo.png")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client3}
-              alt="Client 3"
+              src={loadImage("barbera.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client4}
-              alt="Client 4"
+              src={loadImage("Client4.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client5}
-              alt="Client 5"
+              src={loadImage("client5.png")}
               className="h-10 w-64"
               loading="lazy"
             />
             <img
-              src={client6}
-              alt="Client 6"
+              src={loadImage("gig.jpg")}
               className="h-8 w-64"
               loading="lazy"
             />
             <img
-              src={client7}
-              alt="Client 7"
+              src={loadImage("Client6.png")}
               className="h-10 w-64"
               loading="lazy"
             />
 
-            {/* Duplicates */}
-            {/* <img src={client1} alt="Client 1" className="h-10 w-64" /> */}
+            {/* Duplicate for infinite scroll */}
             <img
-              src={client2}
-              alt="Client 2"
+              src={loadImage("leaderlogo.png")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client3}
-              alt="Client 3"
+              src={loadImage("barbera.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client4}
-              alt="Client 4"
+              src={loadImage("Client4.jpg")}
               className="h-12 w-auto"
               loading="lazy"
             />
             <img
-              src={client5}
-              alt="Client 5"
+              src={loadImage("client5.png")}
               className="h-10 w-64"
               loading="lazy"
             />
             <img
-              src={client6}
-              alt="Client 6"
+              src={loadImage("gig.jpg")}
               className="h-8 w-64"
               loading="lazy"
             />
             <img
-              src={client7}
-              alt="Client 7"
+              src={loadImage("Client6.png")}
               className="h-10 w-64"
               loading="lazy"
             />

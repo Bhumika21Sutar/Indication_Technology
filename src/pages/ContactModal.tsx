@@ -74,7 +74,10 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             type="email"
             required
             placeholder="Email"
-            className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-white placeholder-white-400"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$"
+            className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 
+             focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+             outline-none text-white placeholder-white-400"
           />
           <input
             name="subject"
@@ -84,7 +87,19 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           <input
             name="phone"
             placeholder="Phone"
-            className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-white placeholder-white-400"
+            required
+            inputMode="numeric"
+            pattern="[0-9]*"
+            maxLength={15}
+            onInput={(e) => {
+              e.currentTarget.value = e.currentTarget.value.replace(
+                /[^0-9]/g,
+                ""
+              );
+            }}
+            className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 
+             focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+             outline-none text-white placeholder-white-400"
           />
           <textarea
             name="message"
